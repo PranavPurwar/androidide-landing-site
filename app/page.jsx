@@ -110,9 +110,13 @@ function HeaderHero() {
   );
 }
 
+async function getFeatures() {
+  const featuresRes = await fetch(`${process.env.BASE_URL}/api/features`);
+  return featuresRes.json();
+}
+
 async function Features() {
-  const res = await fetch(`${process.env.BASE_URL}/api/features`);
-  const features = await res.json();
+  const features = await getFeatures();
 
   return (
     <section className="bg-base-100 p-8">
@@ -200,9 +204,13 @@ function StatItem({ icon, title, value }) {
   );
 }
 
+async function getReviews() {
+  const reviewsRes = await fetch(`${process.env.BASE_URL}/api/reviews`);
+  return reviewsRes.json();
+}
+
 async function Review() {
-  const res = await fetch(`${process.env.BASE_URL}/api/reviews`);
-  const reviews = await res.json();
+  const reviews = await getReviews();
 
   return (
     <section className="py-24">
