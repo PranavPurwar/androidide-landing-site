@@ -1,0 +1,38 @@
+[
+	{
+		"id": 1,
+		"img": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse2.mm.bing.net%2Fth%3Fid%3DOIP.SO4ebkg4i4QH3NvX4B3qTQHaNK%26pid%3DApi&f=1&ipt=654ca224b3917bb2e8b1654c6801c7be782eb299ac7fceebdbfceadfff4c2b12&ipo=images",
+		"title": "Gradle",
+		"desc": "Stay ahead of the curve by building your projects with the newest and most advanced Gradle build system."
+	},
+	{
+		"id": 2,
+		"img": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse2.mm.bing.net%2Fth%3Fid%3DOIP.SO4ebkg4i4QH3NvX4B3qTQHaNK%26pid%3DApi&f=1&ipt=654ca224b3917bb2e8b1654c6801c7be782eb299ac7fceebdbfceadfff4c2b12&ipo=images",
+		"title": "Code editor",
+		"desc": "Upgrade your coding game with our IDE's smart code editor that offers code completions, actions, and analysis to help you write better code quickly."
+	},
+	{
+		"id": 3,
+		"img": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse2.mm.bing.net%2Fth%3Fid%3DOIP.SO4ebkg4i4QH3NvX4B3qTQHaNK%26pid%3DApi&f=1&ipt=654ca224b3917bb2e8b1654c6801c7be782eb299ac7fceebdbfceadfff4c2b12&ipo=images",
+		"title": "Studio Project Support",
+		"desc": "Effortlessly build Android Studio projects in AndroidIDE without any modifications - making your development process smoother and more streamlined!"
+	},
+	{
+		"id": 4,
+		"img": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse2.mm.bing.net%2Fth%3Fid%3DOIP.SO4ebkg4i4QH3NvX4B3qTQHaNK%26pid%3DApi&f=1&ipt=654ca224b3917bb2e8b1654c6801c7be782eb299ac7fceebdbfceadfff4c2b12&ipo=images",
+		"title": "Terminal",
+		"desc": "Seamlessly access a full Linux environment with AndroidIDE's built-in terminal, based on the powerful Termux project."
+	},
+	{
+		"id": 5,
+		"img": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse2.mm.bing.net%2Fth%3Fid%3DOIP.SO4ebkg4i4QH3NvX4B3qTQHaNK%26pid%3DApi&f=1&ipt=654ca224b3917bb2e8b1654c6801c7be782eb299ac7fceebdbfceadfff4c2b12&ipo=images",
+		"title": "AAB Support",
+		"desc": "Make your app available to millions of users by effortlessly exporting it as AAB files and publishing it on the Play store!"
+	},
+	{
+		"id": 6,
+		"img": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse2.mm.bing.net%2Fth%3Fid%3DOIP.SO4ebkg4i4QH3NvX4B3qTQHaNK%26pid%3DApi&f=1&ipt=654ca224b3917bb2e8b1654c6801c7be782eb299ac7fceebdbfceadfff4c2b12&ipo=images",
+		"title": "Open Source",
+		"desc": "Explore endless innovation possibilities with our open-source project, where transparency and collaboration are key!"
+	}
+]

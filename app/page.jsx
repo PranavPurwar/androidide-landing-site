@@ -1,4 +1,6 @@
 import Footer from "@/components/Footer";
+import features from "@/data/features.json";
+import reviews from "@/data/reviews.json";
 
 export default function Home() {
   return (
@@ -110,14 +112,7 @@ function HeaderHero() {
   );
 }
 
-async function getFeatures() {
-  const featuresRes = await fetch(`${process.env.BASE_URL}/api/features`);
-  return featuresRes.json();
-}
-
 async function Features() {
-  const features = await getFeatures();
-
   return (
     <section className="bg-base-100 p-8">
       <h2 className="text-wider | text-4xl text-center font-bold tracking-wide py-8">
@@ -204,14 +199,7 @@ function StatItem({ icon, title, value }) {
   );
 }
 
-async function getReviews() {
-  const reviewsRes = await fetch(`${process.env.BASE_URL}/api/reviews`);
-  return reviewsRes.json();
-}
-
 async function Review() {
-  const reviews = await getReviews();
-
   return (
     <section className="py-24">
       <div className="flex items-start space-x-4 items-start w-full w-full p-4 mx-auto overflow-x-scroll">
