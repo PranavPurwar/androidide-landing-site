@@ -4,42 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import DonationModal from "@/components/DonationModal";
 
-export default function Drawer({ children }) {
-  const drawerManualToggle = () => {
-    document.querySelector(".drawer-overlay").click();
-  };
-
-  return (
-    <div className="drawer">
-      <input id="drawer-navigation" type="checkbox" className="drawer-toggle" />
-      <div className="drawer-content">
-        <Navbar />
-        {children}
-      </div>
-      <div className="drawer-side">
-        <label htmlFor="drawer-navigation" className="drawer-overlay"></label>
-        <ul className="menu p-4 w-80 md:w-64 bg-base-300">
-          <li>
-            <Link href="/" onClick={drawerManualToggle}>
-              Homepage
-            </Link>
-          </li>
-          <li>
-            <a onClick={drawerManualToggle}>Blogs</a>
-          </li>
-          <li>
-            <label htmlFor="modal-donation" onClick={drawerManualToggle}>
-              Donate
-            </label>
-          </li>
-          <div className="divider h-[1px]"></div>
-        </ul>
-      </div>
-    </div>
-  );
-}
-
-function Navbar() {
+export default function Navbar() {
   return (
     <>
       <nav className="navbar bg-base-100 bg-opacity-70 backdrop-blur shadow-none sticky top-0 z-50">
@@ -47,7 +12,7 @@ function Navbar() {
           <div className="flex-none">
             <label
               htmlFor="drawer-navigation"
-              class="btn btn-circle btn-ghost md:ml-4"
+              className="btn btn-circle btn-ghost md:ml-4"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -80,6 +45,34 @@ function Navbar() {
       </nav>
       <DonationModal />
     </>
+  );
+}
+
+export function DrawerMenu() {
+  const drawerManualToggle = () => {
+    document.querySelector(".drawer-overlay").click();
+  };
+
+  return (
+    <div className="drawer-side">
+      <label htmlFor="drawer-navigation" className="drawer-overlay"></label>
+      <ul className="menu p-4 w-80 md:w-64 bg-base-300">
+        <li>
+          <Link href="/" onClick={drawerManualToggle}>
+            Homepage
+          </Link>
+        </li>
+        <li>
+          <a onClick={drawerManualToggle}>Blogs</a>
+        </li>
+        <li>
+          <label htmlFor="modal-donation" onClick={drawerManualToggle}>
+            Donate
+          </label>
+        </li>
+        <div className="divider h-[1px]"></div>
+      </ul>
+    </div>
   );
 }
 

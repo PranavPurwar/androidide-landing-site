@@ -1,5 +1,5 @@
 import "./globals.css";
-import Drawer from "@/components/Navbar";
+import Navbar, { DrawerMenu } from "@/components/Navbar";
 import { Roboto } from "next/font/google";
 
 const roboto = Roboto({ weight: ["300", "400", "700"], subsets: ["latin"] });
@@ -30,5 +30,18 @@ export default function RootLayout({ children }) {
         <Drawer>{children}</Drawer>
       </body>
     </html>
+  );
+}
+
+function Drawer({ children }) {
+  return (
+    <div className="drawer">
+      <input id="drawer-navigation" type="checkbox" className="drawer-toggle" />
+      <div className="drawer-content">
+        <Navbar />
+        {children}
+      </div>
+      <DrawerMenu />
+    </div>
   );
 }
