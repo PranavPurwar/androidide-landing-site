@@ -177,7 +177,13 @@ function Stats() {
         Join the vibrant AndroidIDE community on Telegram today and connect with
         like-minded developers from around the world!
       </p>
-      <button className="btn btn-secondary">join community</button>
+      <a
+        className="btn btn-secondary"
+        href="https://t.me/androidide_discussions"
+        target="_blank"
+      >
+        join community
+      </a>
     </section>
   );
 }

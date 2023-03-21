@@ -1,5 +1,5 @@
 import "./globals.css";
-import Navbar from "@/components/Navbar";
+import Drawer from "@/components/Navbar";
 import { Roboto } from "next/font/google";
 
 const roboto = Roboto({ weight: ["300", "400", "700"], subsets: ["latin"] });
@@ -27,8 +27,7 @@ export default function RootLayout({ children }) {
           rel="stylesheet"
           href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
         />
-        <Navbar />
-        {children}
+        <Drawer>{children}</Drawer>
       </body>
     </html>
   );
