@@ -24,13 +24,14 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" data-theme="winter">
       <body className={roboto.className}>
-        <link
+        {/* <link
           rel="stylesheet"
           href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
-        />
+        /> */}
         <Script
           async={true}
           crossOrigin="anonymous"
+          strategy="beforeInteractive"
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1117704560424175"
         />
         <Drawer>{children}</Drawer>

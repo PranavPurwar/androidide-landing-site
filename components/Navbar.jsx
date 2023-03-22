@@ -63,7 +63,7 @@ export function DrawerMenu() {
             onClick={drawerManualToggle}
             className="flex flex-row items-center"
           >
-            <i className="material-symbols-rounded">home</i>Homepage
+            <i className="material-symbols-rounded notranslate">home</i>Homepage
           </Link>
         </li>
         <li>
@@ -71,7 +71,7 @@ export function DrawerMenu() {
             onClick={drawerManualToggle}
             className="flex flex-row items-center"
           >
-            <i className="material-symbols-rounded">feed</i>Blogs
+            <i className="material-symbols-rounded notranslate">feed</i>Blogs
           </a>
         </li>
         <li>
@@ -80,7 +80,8 @@ export function DrawerMenu() {
             onClick={drawerManualToggle}
             className="flex flex-row items-center"
           >
-            <i className="material-symbols-rounded">recommend</i>Donate
+            <i className="material-symbols-rounded notranslate">recommend</i>
+            Donate
           </label>
         </li>
         <div className="divider h-[1px]"></div>

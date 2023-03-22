@@ -63,7 +63,7 @@ function SupportUs() {
         htmlFor="modal-donation"
         className="btn btn-outline btn-primary md:btn-sm gap-2"
       >
-        <i className="material-symbols-rounded">recommend</i>
+        <i className="material-symbols-rounded notranslate">recommend</i>
         support us
       </label>
     </section>
