@@ -58,19 +58,33 @@ export function DrawerMenu() {
       <label htmlFor="drawer-navigation" className="drawer-overlay"></label>
       <ul className="menu p-4 w-80 md:w-64 bg-base-300">
         <li>
-          <Link href="/" onClick={drawerManualToggle}>
-            Homepage
+          <Link
+            href="/"
+            onClick={drawerManualToggle}
+            className="flex flex-row items-center"
+          >
+            <i className="material-symbols-rounded">home</i>Homepage
           </Link>
         </li>
         <li>
-          <a onClick={drawerManualToggle}>Blogs</a>
+          <a
+            onClick={drawerManualToggle}
+            className="flex flex-row items-center"
+          >
+            <i className="material-symbols-rounded">feed</i>Blogs
+          </a>
         </li>
         <li>
-          <label htmlFor="modal-donation" onClick={drawerManualToggle}>
-            Donate
+          <label
+            htmlFor="modal-donation"
+            onClick={drawerManualToggle}
+            className="flex flex-row items-center"
+          >
+            <i className="material-symbols-rounded">recommend</i>Donate
           </label>
         </li>
         <div className="divider h-[1px]"></div>
+        <DocumentationCollapsible />
       </ul>
     </div>
   );
@@ -125,5 +139,53 @@ function ThemeToggler() {
         <path d="M21.64,13a1,1,0,0,0-1.05-.14,8.05,8.05,0,0,1-3.37.73A8.15,8.15,0,0,1,9.08,5.49a8.59,8.59,0,0,1,.25-2A1,1,0,0,0,8,2.36,10.14,10.14,0,1,0,22,14.05,1,1,0,0,0,21.64,13Zm-9.5,6.69A8.14,8.14,0,0,1,7.08,5.22v.27A10.15,10.15,0,0,0,17.22,15.63a9.79,9.79,0,0,0,2.1-.22A8.11,8.11,0,0,1,12.14,19.73Z" />
       </svg>
     </label>
+  );
+}
+
+function DocumentationCollapsible() {
+  const documentations = [
+    {
+      id: 1,
+      title: "Installation",
+      subItems: [],
+    },
+    {
+      id: 2,
+      title: "Getting Started",
+      subItems: [],
+    },
+    {
+      id: 3,
+      title: "Working with projects",
+      subItems: [],
+    },
+  ];
+
+  return (
+    <div className="w-full rounded-md flex flex-col items-stretch gap-[1px] overflow-hidden">
+      {documentations.map(({ id, title, subItems }) => (
+        <DocumentationCollapsibleItem
+          key={id}
+          id={id}
+          title={title}
+          subItems={subItems}
+        />
+      ))}
+    </div>
+  );
+}
+
+function DocumentationCollapsibleItem({ id, title, subItems }) {
+  return (
+    <div
+      className="collapse bg-base-100 active:bg-base-200 md:hover:bg-base-200 transition duration-300"
+      tabIndex={id}
+    >
+      <input type="checkbox" />
+      <div className="collapse-title">{title}</div>
+      <div className="collapse-content">
+        <p>sub items here</p>
+      </div>
+    </div>
   );
 }
