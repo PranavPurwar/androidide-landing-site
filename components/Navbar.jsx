@@ -104,7 +104,7 @@ function ThemeToggler() {
     <label
       onClick={toggleTheme}
       className={`swap swap-rotate btn btn-ghost btn-circle ${
-        theme === themes.light ? "swap-active" : ""
+        theme === themes.dark ? "swap-active" : ""
       }`}
     >
       {/* light */}
