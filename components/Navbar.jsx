@@ -185,8 +185,14 @@ function DocumentationCollapsibleItem({ id, title, subItems }) {
       <input type="checkbox" />
       <div className="collapse-title">{title}</div>
       <div className="collapse-content">
-        <p>sub items here</p>
+        {subItems.map((item) => (
+          <DocumentationCollapsibleSubItem />
+        ))}
       </div>
     </div>
   );
+}
+
+function DocumentationCollapsibleSubItem() {
+  return <></>;
 }

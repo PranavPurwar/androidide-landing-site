@@ -231,13 +231,13 @@ function ReviewCard({ quotes, photo, name, professions }) {
       <div className="card-action | px-6 pb-4 flex flex-row gap-4 items-center">
         <div className="avatar">
           <div className="w-8 rounded-full">
-            <img src={photo} alt="itsaky.png" loading="lazy" />
+            <img src={photo} alt={`${name}.png`} loading="lazy" />
           </div>
         </div>
         <div>
-          <h4 className="text-2xl md:text-xl tracking-wide">{name}</h4>
+          <h4 className="text-lg md:text-xl tracking-wide">{name}</h4>
           <p className="italic text-slate-400 text-xs">
-            {professions.join(", ")}
+            {professions.join(", ")}.
           </p>
         </div>
       </div>

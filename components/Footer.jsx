@@ -57,7 +57,7 @@ function SupportUs() {
   return (
     <section className="bg-neutral text-neutral-content bg-opacity-90 p-6 flex flex-row justify-between md:justify-center items-center gap-4">
       <div className="text-normal | md:text-lg tracking-wider uppercase">
-        Like what you see?
+        Love what you see?
       </div>
       <label
         htmlFor="modal-donation"
