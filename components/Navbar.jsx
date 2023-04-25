@@ -1,5 +1,6 @@
 "use client";
 import { useState, useEffect } from "react";
+import { useRouter } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
 import DonationModal from "@/components/DonationModal";
@@ -85,7 +86,7 @@ export function DrawerMenu() {
           </label>
         </li>
         <div className="divider h-[1px]"></div>
-        <DocumentationCollapsible />
+        <DocumentationCollapsible drawerManualToggle={drawerManualToggle} />
       </ul>
     </div>
   );
@@ -143,56 +144,128 @@ function ThemeToggler() {
   );
 }
 
-function DocumentationCollapsible() {
+function DocumentationCollapsible({ drawerManualToggle }) {
   const documentations = [
     {
-      id: 1,
       title: "Installation",
-      subItems: [],
+      directPage: true,
+      to: "/installation",
     },
     {
-      id: 2,
       title: "Getting Started",
-      subItems: [],
+      subItems: [
+        {
+          title: "Creating a new project",
+          to: "/creating-new-project",
+        },
+        {
+          title: "Working with an existing project",
+          to: "/working-with-existing-project",
+        },
+      ],
     },
     {
-      id: 3,
       title: "Working with projects",
-      subItems: [],
+      subItems: [
+        {
+          title: "Options menu",
+          to: "/options-menu",
+        },
+        {
+          title: "File tree",
+          to: "/file-tree",
+        },
+        {
+          title: "Bottom sheet",
+          to: "/bottom-sheet",
+        },
+        {
+          title: "Code editor",
+          to: "/code-editor",
+        },
+        {
+          title: "UI designer",
+          to: "/ui-designer",
+        },
+      ],
     },
   ];
 
   return (
     <div className="w-full rounded-md flex flex-col items-stretch gap-[1px] overflow-hidden">
-      {documentations.map(({ id, title, subItems }) => (
+      {documentations.map(({ title, directPage, to, subItems }, pos) => (
         <DocumentationCollapsibleItem
-          key={id}
-          id={id}
+          key={pos}
+          id={pos}
           title={title}
+          directPage={directPage}
+          to={to}
           subItems={subItems}
+          drawerManualToggle={drawerManualToggle}
         />
       ))}
     </div>
   );
 }
 
-function DocumentationCollapsibleItem({ id, title, subItems }) {
+function DocumentationCollapsibleItem({
+  id,
+  title,
+  directPage,
+  to,
+  subItems,
+  drawerManualToggle,
+}) {
   return (
     <div
       className="collapse bg-base-100 active:bg-base-200 md:hover:bg-base-200 transition duration-300"
       tabIndex={id}
     >
-      <input type="checkbox" />
-      <div className="collapse-title">{title}</div>
-      <div className="collapse-content">
-        {subItems.map((item) => (
-          <DocumentationCollapsibleSubItem />
-        ))}
-      </div>
+      {directPage ? (
+        <Link
+          href={`/documentation${to}`}
+          className="collapse-title"
+          onClick={drawerManualToggle}
+        >
+          {title}
+        </Link>
+      ) : (
+        <>
+          <input type="checkbox" />
+          <div className="collapse-title">{title}</div>
+          <ul className="collapse-content">
+            {subItems.map((item, pos) => (
+              <DocumentationCollapsibleSubItem
+                key={pos}
+                parent={title}
+                title={item.title}
+                to={item.to}
+                drawerManualToggle={drawerManualToggle}
+              />
+            ))}
+          </ul>
+        </>
+      )}
     </div>
   );
 }
 
-function DocumentationCollapsibleSubItem() {
-  return <></>;
+function DocumentationCollapsibleSubItem({
+  parent,
+  title,
+  to,
+  drawerManualToggle,
+}) {
+  return (
+    <li className="text-xs">
+      <Link
+        href={`/documentation/${parent
+          .toLowerCase()
+          .replaceAll(" ", "-")}${to}`}
+        onClick={drawerManualToggle}
+      >
+        {title}
+      </Link>
+    </li>
+  );
 }
