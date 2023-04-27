@@ -114,7 +114,7 @@ function HeaderHero() {
 async function Features() {
   // test
   const response = await fetch(`${process.env.BASE_URL}/api/features`);
-  const features = JSON.parse(await response.text());
+  const features = await response.json();
   return (
     <section className="bg-base-100 p-8">
       <h2 className="text-wider | text-4xl text-center font-bold tracking-wide py-8">
@@ -204,7 +204,7 @@ function StatItem({ icon, title, value }) {
 async function Review() {
   // test
   const response = await fetch(`${process.env.BASE_URL}/api/reviews`);
-  const reviews = JSON.parse(await response.text());
+  const reviews = await response.json();
   return (
     <section className="py-24">
       <div className="flex items-start space-x-4 items-start w-full w-full p-4 mx-auto overflow-x-scroll">

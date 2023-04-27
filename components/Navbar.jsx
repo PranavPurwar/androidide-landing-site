@@ -144,52 +144,9 @@ function ThemeToggler() {
   );
 }
 
-function DocumentationCollapsible({ drawerManualToggle }) {
-  const documentations = [
-    {
-      title: "Installation",
-      directPage: true,
-      to: "/installation",
-    },
-    {
-      title: "Getting Started",
-      subItems: [
-        {
-          title: "Creating a new project",
-          to: "/creating-new-project",
-        },
-        {
-          title: "Working with an existing project",
-          to: "/working-with-existing-project",
-        },
-      ],
-    },
-    {
-      title: "Working with projects",
-      subItems: [
-        {
-          title: "Options menu",
-          to: "/options-menu",
-        },
-        {
-          title: "File tree",
-          to: "/file-tree",
-        },
-        {
-          title: "Bottom sheet",
-          to: "/bottom-sheet",
-        },
-        {
-          title: "Code editor",
-          to: "/code-editor",
-        },
-        {
-          title: "UI designer",
-          to: "/ui-designer",
-        },
-      ],
-    },
-  ];
+async function DocumentationCollapsible({ drawerManualToggle }) {
+  const response = await fetch(`${process.env.BASE_URL}/api/documentations`);
+  const documentations = await response.json();
 
   return (
     <div className="w-full rounded-md flex flex-col items-stretch gap-[1px] overflow-hidden">
