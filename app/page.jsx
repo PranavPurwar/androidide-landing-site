@@ -113,7 +113,9 @@ function HeaderHero() {
 
 async function Features() {
   // test
-  const response = await fetch(`${process.env.BASE_URL}/api/features`);
+  const response = await fetch(
+    `${process.env.NEXT_PUBLIC_BASE_URL}/api/features`
+  );
   const features = await response.json();
   return (
     <section className="bg-base-100 p-8">
@@ -203,7 +205,9 @@ function StatItem({ icon, title, value }) {
 
 async function Review() {
   // test
-  const response = await fetch(`${process.env.BASE_URL}/api/reviews`);
+  const response = await fetch(
+    `${process.env.NEXT_PUBLIC_BASE_URL}/api/reviews`
+  );
   const reviews = await response.json();
   return (
     <section className="py-24">

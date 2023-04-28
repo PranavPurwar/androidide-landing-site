@@ -24,7 +24,9 @@ export default function Docs() {
 }
 
 async function DocumentationCollapsible({ drawerManualToggle }) {
-  const response = await fetch(`${process.env.BASE_URL}/api/documentations`);
+  const response = await fetch(
+    `${process.env.NEXT_PUBLIC_BASE_URL}/api/documentations`
+  );
   const documentations = await response.json();
 
   return (

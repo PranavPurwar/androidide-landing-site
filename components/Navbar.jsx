@@ -144,23 +144,31 @@ function ThemeToggler() {
   );
 }
 
-async function DocumentationCollapsible({ drawerManualToggle }) {
-  const response = await fetch(`${process.env.BASE_URL}/api/documentations`);
-  const documentations = await response.json();
-
+function DocumentationCollapsible({ drawerManualToggle }) {
+  const [documentations, setDocumentations] = useState([]);
+  useEffect(() => {
+    const getData = async () => {
+      const url = `${process.env.NEXT_PUBLIC_BASE_URL}/api/documentations`;
+      const response = await fetch(url);
+      const data = await response.json();
+      setDocumentations(data);
+    };
+    getData();
+  }, []);
   return (
     <div className="w-full rounded-md flex flex-col items-stretch gap-[1px] overflow-hidden">
-      {documentations.map(({ title, directPage, to, subItems }, pos) => (
-        <DocumentationCollapsibleItem
-          key={pos}
-          id={pos}
-          title={title}
-          directPage={directPage}
-          to={to}
-          subItems={subItems}
-          drawerManualToggle={drawerManualToggle}
-        />
-      ))}
+      {documentations &&
+        documentations.map(({ title, directPage, to, subItems }, pos) => (
+          <DocumentationCollapsibleItem
+            key={pos}
+            id={pos}
+            title={title}
+            directPage={directPage}
+            to={to}
+            subItems={subItems}
+            drawerManualToggle={drawerManualToggle}
+          />
+        ))}
     </div>
   );
 }
