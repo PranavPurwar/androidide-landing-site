@@ -14,7 +14,7 @@ export default async function DocMarkdown({ params: { markdown } }) {
     const markdownPath = `${process.env.NEXT_PUBLIC_DOCS_URL}/${markdown.join(
       "/"
     )}.md`;
-    const res = await fetch(markdownPath);
+    const res = await fetch(markdownPath, { next: { revalidate: 0 } });
     markdownString = await res.text();
   } catch {
     markdownString = "";
