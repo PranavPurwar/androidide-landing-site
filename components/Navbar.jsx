@@ -148,16 +148,21 @@ function DocumentationCollapsible({ drawerManualToggle }) {
   const [documentations, setDocumentations] = useState([]);
   useEffect(() => {
     const getData = async () => {
-      const url = `${process.env.NEXT_PUBLIC_BASE_URL}/api/documentations`;
-      const response = await fetch(url);
-      const data = await response.json();
-      setDocumentations(data);
+      try {
+        const url = `${process.env.NEXT_PUBLIC_BASE_URL}/api/documentations`;
+        const response = await fetch(url);
+        const data = await response.json();
+        setDocumentations(data);
+      } catch {
+        console.log("pre-rendering catch");
+      }
     };
     getData();
   }, []);
   return (
     <div className="w-full rounded-md flex flex-col items-stretch gap-[1px] overflow-hidden">
       {documentations &&
+        documentations.length > 0 &&
         documentations.map(({ title, directPage, to, subItems }, pos) => (
           <DocumentationCollapsibleItem
             key={pos}

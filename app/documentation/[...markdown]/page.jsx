@@ -9,11 +9,16 @@ export const metadata = {
 };
 
 export default async function DocMarkdown({ params: { markdown } }) {
-  const markdownPath = `${process.env.NEXT_PUBLIC_DOCS_URL}/${markdown.join(
-    "/"
-  )}.md`;
-  const res = await fetch(markdownPath);
-  const markdownString = await res.text();
+  let markdownString;
+  try {
+    const markdownPath = `${process.env.NEXT_PUBLIC_DOCS_URL}/${markdown.join(
+      "/"
+    )}.md`;
+    const res = await fetch(markdownPath);
+    markdownString = await res.text();
+  } catch {
+    markdownString = "";
+  }
   return (
     <>
       <main className="bg-base-200 min-h-[60%] p-8 flex flex-col items-stretch">
@@ -21,7 +26,6 @@ export default async function DocMarkdown({ params: { markdown } }) {
           <ReactMarkdown
             children={markdownString}
             remarkPlugins={[remarkGfm]}
-            className=""
           />
         </div>
       </main>

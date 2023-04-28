@@ -24,24 +24,31 @@ export default function Docs() {
 }
 
 async function DocumentationCollapsible({ drawerManualToggle }) {
-  const response = await fetch(
-    `${process.env.NEXT_PUBLIC_BASE_URL}/api/documentations`
-  );
-  const documentations = await response.json();
+  let documentations;
+  try {
+    const response = await fetch(
+      `${process.env.NEXT_PUBLIC_BASE_URL}/api/documentations`
+    );
+    documentations = await response.json();
+  } catch {
+    documentations = [];
+  }
 
   return (
     <div className="w-full rounded-md flex flex-col items-stretch gap-[1px] overflow-hidden">
-      {documentations.map(({ title, directPage, to, subItems }, pos) => (
-        <DocumentationCollapsibleItem
-          key={pos}
-          id={pos}
-          title={title}
-          directPage={directPage}
-          to={to}
-          subItems={subItems}
-          drawerManualToggle={drawerManualToggle}
-        />
-      ))}
+      {documentations &&
+        documentations.length > 0 &&
+        documentations.map(({ title, directPage, to, subItems }, pos) => (
+          <DocumentationCollapsibleItem
+            key={pos}
+            id={pos}
+            title={title}
+            directPage={directPage}
+            to={to}
+            subItems={subItems}
+            drawerManualToggle={drawerManualToggle}
+          />
+        ))}
     </div>
   );
 }
