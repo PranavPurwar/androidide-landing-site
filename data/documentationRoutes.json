@@ -8,6 +8,10 @@
 		"title": "Getting Started",
 		"subItems": [
 			{
+				"title": "I am new user",
+				"to": "/new-user"
+			},
+			{
 				"title": "Creating a new project",
 				"to": "/creating-new-project"
 			},

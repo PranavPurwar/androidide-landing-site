@@ -41,7 +41,12 @@ export default function Navbar() {
         </div>
         <div className="navbar-end gap-4">
           <ThemeToggler />
-          <button className="btn btn-primary">get started</button>
+          <Link
+            href={`${process.env.NEXT_PUBLIC_BASE_URL}/documentation/getting-started/new-user`}
+            className="btn btn-primary"
+          >
+            get started
+          </Link>
         </div>
       </nav>
       <DonationModal />

@@ -105,7 +105,12 @@ function HeaderHero() {
         <p className="text-lg mb-2">
           Build real, Gradle-based Android applications on Android devices
         </p>
-        <button className="btn btn-primary">getting started</button>
+        <Link
+          href={`${process.env.NEXT_PUBLIC_BASE_URL}/documentation/getting-started/new-user`}
+          className="btn btn-primary"
+        >
+          getting started
+        </Link>
       </div>
     </div>
   );

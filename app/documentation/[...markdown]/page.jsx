@@ -21,11 +21,41 @@ export default async function DocMarkdown({ params: { markdown } }) {
   }
   return (
     <>
-      <main className="bg-base-200 min-h-[60%] p-8 flex flex-col items-stretch">
-        <div className={styles.markdown}>
+      <main className="bg-base-200 min-h-[60%] flex flex-col items-stretch">
+        <div
+          className={`w-full max-w-[100%] md:max-w-2xl p-8 overflow-x-scroll ${styles.markdown}`}
+        >
           <ReactMarkdown
             children={markdownString}
             remarkPlugins={[remarkGfm]}
+            components={{
+              h1: ({ node, ...props }) => (
+                <h1 className="text-4xl font-bold" {...props} />
+              ),
+              h2: ({ node, ...props }) => (
+                <h2 className="text-2xl font-semibold" {...props} />
+              ),
+              a: ({ node, ...props }) => <a className="link" {...props} />,
+              sup: ({ node, ...props }) => (
+                <sup className="text-xs -top-[0.75rem]" {...props} />
+              ),
+              code: ({ node, ...props }) => (
+                <code className="bg-base-300 p-1 text-sm rounded" {...props} />
+              ),
+              pre: ({ node, ...props }) => (
+                <div className="mockup-code w-full min-w-0">
+                  <pre data-prefix="$" className="pb-0">
+                    <code {...props} className="pr-4" />
+                  </pre>
+                </div>
+              ),
+              ul: ({ node, ...props }) => (
+                <ul {...props} style={{ all: "revert" }} />
+              ),
+              li: ({ node, ...props }) => (
+                <li {...props} style={{ all: "revert" }} />
+              ),
+            }}
           />
         </div>
       </main>

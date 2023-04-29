@@ -14,7 +14,22 @@ module.exports = {
   plugins: [require("daisyui")],
   daisyui: {
     styled: true,
-    themes: ["winter", "dark"],
+    themes: [
+      {
+        winter: {
+          ...require("daisyui/src/colors/themes")["[data-theme=winter]"],
+          primary: "#F44336",
+          "primary-focus": "#E14336",
+        },
+      },
+      {
+        dark: {
+          ...require("daisyui/src/colors/themes")["[data-theme=dark]"],
+          primary: "#F44336",
+          "primary-focus": "#E14336",
+        },
+      },
+    ],
     base: true,
     utils: true,
     logs: true,
