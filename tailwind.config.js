@@ -20,6 +20,8 @@ module.exports = {
           ...require("daisyui/src/colors/themes")["[data-theme=winter]"],
           primary: "#F44336",
           "primary-focus": "#E14336",
+          secondary: "#F44336",
+          "secondary-focus": "#E14336",
         },
       },
       {
@@ -27,6 +29,8 @@ module.exports = {
           ...require("daisyui/src/colors/themes")["[data-theme=dark]"],
           primary: "#F44336",
           "primary-focus": "#E14336",
+          secondary: "#F44336",
+          "secondary-focus": "#E14336",
         },
       },
     ],

@@ -26,9 +26,9 @@ function Mockup() {
   return (
     <div className="flex-1 flex">
       <div className="mockup-phone md:mx-0 md:ml-auto">
-        <div className="camera"></div>
-        <div className="display">
-          <div className="artboard artboard-demo phone-1">
+        <div className="camera !w-[25%]"></div>
+        <div className="display mt-0">
+          <div className="artboard artboard-demo phone-1 !h-auto">
             <ScreenshotCarousel />
           </div>
         </div>
@@ -41,26 +41,44 @@ function ScreenshotCarousel() {
   const screenshots = [
     {
       id: 1,
-      uri: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse2.mm.bing.net%2Fth%3Fid%3DOIP.SO4ebkg4i4QH3NvX4B3qTQHaNK%26pid%3DApi&f=1&ipt=654ca224b3917bb2e8b1654c6801c7be782eb299ac7fceebdbfceadfff4c2b12&ipo=images",
+      uri: "https://images2.imgbox.com/c8/56/n23t5mup_o.png",
       next: 2,
       prev: 3,
     },
     {
       id: 2,
-      uri: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse2.mm.bing.net%2Fth%3Fid%3DOIP.SO4ebkg4i4QH3NvX4B3qTQHaNK%26pid%3DApi&f=1&ipt=654ca224b3917bb2e8b1654c6801c7be782eb299ac7fceebdbfceadfff4c2b12&ipo=images",
+      uri: "https://images2.imgbox.com/7b/d5/DBKstmnQ_o.png",
       next: 3,
       prev: 1,
     },
     {
       id: 3,
-      uri: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse2.mm.bing.net%2Fth%3Fid%3DOIP.SO4ebkg4i4QH3NvX4B3qTQHaNK%26pid%3DApi&f=1&ipt=654ca224b3917bb2e8b1654c6801c7be782eb299ac7fceebdbfceadfff4c2b12&ipo=images",
-      next: 1,
+      uri: "https://images2.imgbox.com/20/d6/a3jO40E8_o.png",
+      next: 4,
       prev: 2,
+    },
+    {
+      id: 4,
+      uri: "https://images2.imgbox.com/9e/ba/GBZHrBfR_o.png",
+      next: 5,
+      prev: 3,
+    },
+    {
+      id: 5,
+      uri: "https://images2.imgbox.com/65/06/ZlLbg1ad_o.png",
+      next: 6,
+      prev: 4,
+    },
+    {
+      id: 6,
+      uri: "https://images2.imgbox.com/89/f9/J33LUzzr_o.png",
+      next: 1,
+      prev: 5,
     },
   ];
 
   return (
-    <div className="w-full carousel rounded-box">
+    <div className="w-fit carousel rounded-box">
       {screenshots.map(({ id, uri, next, prev }) => (
         <ScreenshotCarouselItem
           key={id}
@@ -76,10 +94,10 @@ function ScreenshotCarousel() {
 
 function ScreenshotCarouselItem({ id, imgUri, next, prev }) {
   return (
-    <div id={`screenshot${id}`} className="carousel-item relative w-full">
+    <div id={`screenshot${id}`} className="carousel-item relative w-fit">
       <img
         src={imgUri}
-        className="w-full"
+        className="w-full object-contain object-center"
         alt={`screenshot-preview-${id}`}
         loading="lazy"
       />

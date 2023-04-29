@@ -1,11 +1,12 @@
 "use client";
 import { useState, useEffect } from "react";
-import { useRouter } from "next/navigation";
+import { usePathname } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
 import DonationModal from "@/components/DonationModal";
 
 export default function Navbar() {
+  const pathname = usePathname();
   return (
     <>
       <nav className="navbar bg-base-100 bg-opacity-70 backdrop-blur shadow-none sticky top-0 z-50">
@@ -41,12 +42,14 @@ export default function Navbar() {
         </div>
         <div className="navbar-end gap-4">
           <ThemeToggler />
-          <Link
-            href={`${process.env.NEXT_PUBLIC_BASE_URL}/documentation/getting-started/new-user`}
-            className="btn btn-primary"
-          >
-            get started
-          </Link>
+          {pathname !== "/documentation/getting-started/new-user" && (
+            <Link
+              href={`${process.env.NEXT_PUBLIC_BASE_URL}/documentation/getting-started/new-user`}
+              className="btn btn-primary"
+            >
+              get started
+            </Link>
+          )}
         </div>
       </nav>
       <DonationModal />
@@ -74,6 +77,7 @@ export function DrawerMenu() {
         </li>
         <li>
           <a
+            href="https://learn.androidide.com"
             onClick={drawerManualToggle}
             className="flex flex-row items-center"
           >
@@ -155,7 +159,7 @@ function DocumentationCollapsible({ drawerManualToggle }) {
     const getData = async () => {
       try {
         const url = `${process.env.NEXT_PUBLIC_BASE_URL}/api/documentations`;
-        const response = await fetch(url);
+        const response = await fetch(url, { next: { revalidate: 0 } });
         const data = await response.json();
         setDocumentations(data);
       } catch {
