@@ -184,12 +184,12 @@ function Stats() {
     {
       id: 2,
       title: "Stars",
-      value: "700+",
+      value: "900+",
     },
     {
       id: 3,
       title: "Latest Version",
-      value: "2.4.0-beta",
+      value: "2.4.1-beta",
     },
   ];
   return (

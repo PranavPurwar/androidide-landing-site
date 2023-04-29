@@ -1,37 +1,37 @@
 [
 	{
 		"id": 1,
-		"img": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse2.mm.bing.net%2Fth%3Fid%3DOIP.SO4ebkg4i4QH3NvX4B3qTQHaNK%26pid%3DApi&f=1&ipt=654ca224b3917bb2e8b1654c6801c7be782eb299ac7fceebdbfceadfff4c2b12&ipo=images",
+		"img": "https://images2.imgbox.com/f9/e7/yR52bIvI_o.png",
 		"title": "Gradle",
 		"desc": "Stay ahead of the curve by building your projects with the newest and most advanced Gradle build system."
 	},
 	{
 		"id": 2,
-		"img": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse2.mm.bing.net%2Fth%3Fid%3DOIP.SO4ebkg4i4QH3NvX4B3qTQHaNK%26pid%3DApi&f=1&ipt=654ca224b3917bb2e8b1654c6801c7be782eb299ac7fceebdbfceadfff4c2b12&ipo=images",
+		"img": "https://images2.imgbox.com/2a/b3/UP9aBGqz_o.png",
 		"title": "Code editor",
 		"desc": "Upgrade your coding game with our IDE's smart code editor that offers code completions, actions, and analysis to help you write better code quickly."
 	},
 	{
 		"id": 3,
-		"img": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse2.mm.bing.net%2Fth%3Fid%3DOIP.SO4ebkg4i4QH3NvX4B3qTQHaNK%26pid%3DApi&f=1&ipt=654ca224b3917bb2e8b1654c6801c7be782eb299ac7fceebdbfceadfff4c2b12&ipo=images",
+		"img": "https://images2.imgbox.com/e0/4b/u2maf0ON_o.png",
 		"title": "Studio Project Support",
 		"desc": "Effortlessly build Android Studio projects in AndroidIDE without any modifications - making your development process smoother and more streamlined!"
 	},
 	{
 		"id": 4,
-		"img": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse2.mm.bing.net%2Fth%3Fid%3DOIP.SO4ebkg4i4QH3NvX4B3qTQHaNK%26pid%3DApi&f=1&ipt=654ca224b3917bb2e8b1654c6801c7be782eb299ac7fceebdbfceadfff4c2b12&ipo=images",
+		"img": "https://images2.imgbox.com/c3/72/7FAxbsVg_o.png",
 		"title": "Terminal",
 		"desc": "Seamlessly access a full Linux environment with AndroidIDE's built-in terminal, based on the powerful Termux project."
 	},
 	{
 		"id": 5,
-		"img": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse2.mm.bing.net%2Fth%3Fid%3DOIP.SO4ebkg4i4QH3NvX4B3qTQHaNK%26pid%3DApi&f=1&ipt=654ca224b3917bb2e8b1654c6801c7be782eb299ac7fceebdbfceadfff4c2b12&ipo=images",
+		"img": "https://images2.imgbox.com/60/c9/U0WWvWuD_o.png",
 		"title": "AAB Support",
 		"desc": "Make your app available to millions of users by effortlessly exporting it as AAB files and publishing it on the Play store!"
 	},
 	{
 		"id": 6,
-		"img": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse2.mm.bing.net%2Fth%3Fid%3DOIP.SO4ebkg4i4QH3NvX4B3qTQHaNK%26pid%3DApi&f=1&ipt=654ca224b3917bb2e8b1654c6801c7be782eb299ac7fceebdbfceadfff4c2b12&ipo=images",
+		"img": "https://images2.imgbox.com/e8/6d/IClgDrNy_o.png",
 		"title": "Open Source",
 		"desc": "Explore endless innovation possibilities with our open-source project, where transparency and collaboration are key!"
 	}
