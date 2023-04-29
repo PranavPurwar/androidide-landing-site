@@ -137,7 +137,8 @@ function HeaderHero() {
 async function Features() {
   // test
   const response = await fetch(
-    `${process.env.NEXT_PUBLIC_BASE_URL}/api/features`
+    `${process.env.NEXT_PUBLIC_BASE_URL}/api/features`,
+    { next: { revalidate: 0 } }
   );
   const features = await response.json();
   return (
@@ -229,7 +230,8 @@ function StatItem({ icon, title, value }) {
 async function Review() {
   // test
   const response = await fetch(
-    `${process.env.NEXT_PUBLIC_BASE_URL}/api/reviews`
+    `${process.env.NEXT_PUBLIC_BASE_URL}/api/reviews`,
+    { next: { revalidate: 0 } }
   );
   const reviews = await response.json();
   return (
