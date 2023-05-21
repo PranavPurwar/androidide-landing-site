@@ -44,7 +44,7 @@ export default async function DocMarkdown({ params: { markdown } }) {
               ),
               pre: ({ node, ...props }) => (
                 <div className="mockup-code w-full min-w-0">
-                  <pre data-prefix="$" className="pb-0">
+                  <pre className="pb-0">
                     <code {...props} className="pr-4" />
                   </pre>
                 </div>

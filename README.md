@@ -20,7 +20,7 @@ pnpm dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+The `app/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
 
 ## Technology Used
 
@@ -37,6 +37,6 @@ NEXT_PUBLIC_BASE_URL=http://localhost:3000
 NEXT_PUBLIC_DOCS_URL=https://raw.githubusercontent.com/BanDroid/androidide-docs/main
 ```
 
-## Live Site
+## Live Site (Demo)
 
 - [vercel](https://androidide.vercel.app)

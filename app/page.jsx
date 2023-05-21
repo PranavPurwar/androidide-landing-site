@@ -25,10 +25,10 @@ function Header() {
 function Mockup() {
   return (
     <div className="flex-1 flex">
-      <div className="mockup-phone md:mx-0 md:ml-auto">
-        <div className="camera !w-[25%]"></div>
-        <div className="display mt-0">
-          <div className="artboard artboard-demo phone-1 !h-auto">
+      <div className="mockup-phone md:mx-0 md:ml-auto rounded-2xl">
+        <div className="camera !w-[25%] opacity-0"></div>
+        <div className="display mt-0 !rounded-md">
+          <div className="artboard artboard-demo phone-1 !h-auto min-h-[100vh]">
             <ScreenshotCarousel />
           </div>
         </div>
@@ -43,7 +43,7 @@ function ScreenshotCarousel() {
       id: 1,
       uri: "https://images2.imgbox.com/c8/56/n23t5mup_o.png",
       next: 2,
-      prev: 3,
+      prev: 6,
     },
     {
       id: 2,
