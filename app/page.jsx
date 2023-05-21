@@ -28,7 +28,7 @@ function Mockup() {
       <div className="mockup-phone md:mx-0 md:ml-auto rounded-2xl">
         <div className="camera !w-[25%] opacity-0"></div>
         <div className="display mt-0 !rounded-md">
-          <div className="artboard artboard-demo phone-1 !h-auto min-h-[100vh]">
+          <div className="artboard artboard-demo phone-1 !h-auto min-h-[90vh]">
             <ScreenshotCarousel />
           </div>
         </div>
@@ -99,7 +99,7 @@ function ScreenshotCarouselItem({ id, imgUri, next, prev }) {
         src={imgUri}
         className="w-full object-contain object-center"
         alt={`screenshot-preview-${id}`}
-        loading="lazy"
+        loading={id === 1 ? "eager" : "lazy"}
       />
       <div className="hidden md:flex justify-between absolute transform -translate-y-1/2 left-2 right-2 top-1/2">
         <a href={`#screenshot${prev}`} className="btn btn-ghost btn-circle">
